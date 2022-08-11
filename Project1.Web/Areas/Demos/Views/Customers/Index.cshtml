@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Project1.Web.Models.Customers>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="background-color:#FCF86F">Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" style="background-color:#E2C1F4">
+    <thead>
+        <tr style="background-color:#D231F6">
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNUmber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eamil)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNUmber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Eamil)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CustomerID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CustomerID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CustomerID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

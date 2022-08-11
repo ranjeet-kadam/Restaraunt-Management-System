@@ -1,0 +1,48 @@
+﻿@model Project1.Web.Models.Customers
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Customers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4"style="background-color:antiquewhite">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="background-color:#78E3F0">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="background-color:#78E3F0">
+                <label asp-for="CustomerAddress" class="control-label"></label>
+                <input asp-for="CustomerAddress" class="form-control" />
+                <span asp-validation-for="CustomerAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="background-color:#78E3F0">
+                <label asp-for="MobileNUmber" class="control-label"></label>
+                <input asp-for="MobileNUmber" class="form-control" />
+                <span asp-validation-for="MobileNUmber" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="background-color:#78E3F0">
+                <label asp-for="Eamil" class="control-label"></label>
+                <input asp-for="Eamil" class="form-control" />
+                <span asp-validation-for="Eamil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
